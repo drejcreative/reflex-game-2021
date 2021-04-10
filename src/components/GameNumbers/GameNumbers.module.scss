@@ -1,0 +1,27 @@
+.gamenumbers {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 2px;
+
+  p {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--light);
+    background: rgba(45, 8, 71, .4);
+    border-radius: 10px;
+    font-weight: 900;
+
+    &.hit {
+      background: var(--main);
+    }
+
+    &.miss {
+      background: var(--secoundary);
+    }
+  }
+}

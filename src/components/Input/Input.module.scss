@@ -1,0 +1,25 @@
+.inputWrap {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  position: relative;
+  width: 100%;
+
+  input {
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--main);
+    color: var(--light);
+    background-color: transparent;
+    background: no-repeat;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+
+    &:disabled {
+      background-color: var(--background);
+      cursor: not-allowed;
+    }
+  }
+}

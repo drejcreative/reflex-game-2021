@@ -1,0 +1,160 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  background: url('../assets/Images/background.gif') no-repeat;
+  background-size: cover;
+  position: relative;
+
+  :global {
+    @keyframes flash {
+      from {opacity: 1}
+      to {opacity: 0.3}
+    }
+  }
+
+  .wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      font-size: 6rem;
+      font-weight: 600;
+      color: var(--light);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--light);
+      margin-bottom: 20px;
+      font-family: 'Press Start 2P', cursive;
+
+      animation-name: flash;
+      animation-duration: 0.5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  .controls {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0px;
+    align-items: center;
+    height: calc(100vh - 360px);
+    font-family: 'Press Start 2P', cursive;
+    &.progress {
+      height: 100%;
+      .button {
+        padding: 5px 10px;
+        font-size: 1rem;
+        color: var(--secoundary);
+        border: 1px solid var(--secoundary);
+        &:hover {
+          background: var(--secoundary);
+          color: var(--light);
+          border: 1px solid var(--secoundary);
+        }
+      }
+    }
+    .button {
+      padding: 10px 20px;
+      font-size: 2rem;
+      text-transform: uppercase;
+      color: var(--light);
+      border: 1px solid var(--light);
+      cursor: pointer;
+      transition: all .3s ease;
+      border-radius: 3px;
+      &:hover {
+        background: rgba(147, 237, 133, 0.5);
+        border: 1px solid rgba(147, 237, 133, 0.8);
+      }
+    }
+  }
+
+  .dificulty {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Press Start 2P', cursive;
+    span {
+      cursor: pointer;
+      background: var(--light);
+      padding: 5px 10px;
+      margin-right: 10px;
+      border-radius: 3px;
+      &:last-child {
+        margin-right: 0px;
+      }
+      &.active {
+        background: var(--main);
+        font-weight: 600;
+      }
+    }
+  }
+
+  .score {
+    width: 90px;
+    position: absolute;
+    right: 0px;
+    top: 300px;
+    color: var(--light);
+    &.big {
+      width: 300px;
+      top: 20px;
+      h3 {
+        font-size: 3rem;
+      }
+      p {
+        font-size: 2rem;
+      }
+      span {
+        width: 150px;
+      }
+    }
+    h3 {
+      font-size: 1.5rem;
+    }
+    span {
+      width: 50px;
+      display: inline-block;
+    }
+    P {
+      margin-top: 10px;
+      &.hit {
+        color: var(--main);
+      }
+      &.miss {
+        color: var(--secoundary);
+      }
+    }
+  }
+
+  .win {
+    font-size: 3rem;
+    margin: 10px 0px 30px 0px;
+    color: var(--main);
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+  }
+  .fail {
+    font-size: 3rem;
+    margin: 10px 0px 30px 0px;
+    color: var(--secoundary);
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+  }
+}
